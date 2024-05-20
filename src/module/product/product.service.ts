@@ -18,8 +18,15 @@ const getProductById = async (productId: string) => {
 };
 
 // Update product
-const updateProduct = async (productId: string, product: TProduct) => {
+const updateProductById = async (productId: string, product: TProduct) => {
     const updatedProduct = await Product.findByIdAndUpdate(productId, product, { new: true });
     return updatedProduct;
 }
-export default { createProduct, getAllProducts, getProductById, updateProduct }; 
+
+
+//  Delete product
+const deleteProductById = async (productId: string) => {
+    const deletedProduct = await Product.findByIdAndDelete(productId);
+    return deletedProduct;
+}
+export default { createProduct, getAllProducts, getProductById, updateProductById, deleteProductById }; 
