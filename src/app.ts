@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 const app: Application = express();
 import cors from 'cors';
-import router from './module/order/order.route';
+import router from './module/product/product.route';
 
 // parser
 app.use(express.json());

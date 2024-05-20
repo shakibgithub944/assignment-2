@@ -1,6 +1,6 @@
 
 import mongoose from 'mongoose';
-import { TProduct, TInventory, TVariant } from './order.interface';
+import { TProduct, TInventory, TVariant } from './product.interface';
 const { Schema } = mongoose;
 
 // Define the Variant schema
