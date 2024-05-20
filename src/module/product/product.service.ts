@@ -11,5 +11,15 @@ const getAllProducts = async () => {
     const products = await Product.find();
     return products;
 };
+// Get product by id
+const getProductById = async (productId: string) => {
+    const product = await Product.findById(productId);
+    return product;
+};
 
-export default { createProduct, getAllProducts }; 
+// Update product
+const updateProduct = async (productId: string, product: TProduct) => {
+    const updatedProduct = await Product.findByIdAndUpdate(productId, product, { new: true });
+    return updatedProduct;
+}
+export default { createProduct, getAllProducts, getProductById, updateProduct }; 
