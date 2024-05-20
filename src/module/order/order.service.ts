@@ -1,10 +1,10 @@
+import { TProduct } from "./order.interface";
+import { Product } from "./order.model";
 
-import { Student } from "./order.interface";
-import { StudentModel } from "./order.model";
 
-const studentService = async (student: Student) => {
-    const studentData = await StudentModel.create(student);
-    return studentData;
+const orderService = async (product: TProduct) => {
+    const orderData = await Product.create(product);
+    return orderData;
 };
 
-export default studentService; // Export the studentService function
+export default orderService; 

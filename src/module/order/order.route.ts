@@ -1,9 +1,9 @@
 import express from 'express';
-import createStudent from './order.controller';
+import createProduct from './order.controller';
 
 
 const router = express.Router();
 
-router.post('/products', createStudent);
+router.post('/products', createProduct);
 
 export default router;
