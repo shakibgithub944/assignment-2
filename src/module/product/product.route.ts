@@ -1,6 +1,6 @@
 import express from 'express';
 import productController from './product.controller';
-
+import orderController from '../order/order.controller';
 
 const router = express.Router();
 
@@ -12,6 +12,6 @@ router.put('/products/:productId', productController.updateProductById);
 router.delete('/products/:productId', productController.deleteProductById);
 // product routes end
 
-
+router.post('/orders', orderController.createOrder);
 
 export default router;
