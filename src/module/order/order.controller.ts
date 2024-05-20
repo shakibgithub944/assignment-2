@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import studentService from './order.service'; // Add missing import statement
-// import studentSchema from './order.validation';
-// https://github.com/shakibgithub944/assignment-2.git
+
 const createStudent = async (req: Request, res: Response) => {
     try {
         const student = req.body.student;
