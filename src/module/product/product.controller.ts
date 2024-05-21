@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import productService from './product.service';
 import { validateProduct } from '../../validation/product.validation';
+import { TProduct } from './product.interface';
 
 
 
@@ -17,7 +18,8 @@ const createProduct = async (req: Request, res: Response) => {
                 errors: validateProductData.errors
             });
         }
-        const result = await productService.createProduct(productData);
+        // Create product with validated data
+        const result = await productService.createProduct(validateProductData.data as TProduct);
         res.status(201).json({ success: true, message: 'Product created successfully', data: result });
     } catch (error) {
         res.status(400).json({ success: false, message: error });
