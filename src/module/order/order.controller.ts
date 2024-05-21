@@ -7,6 +7,9 @@ const createOrder = async (req: Request, res: Response) => {
     const order = req.body;
     try {
         const orderData = await orderService.createOrder(order);
+        if (!orderData) {
+            return res.status(404).json({ success: false, message: 'Product not found' });
+        }
         return res.status(201).json(orderData);
     } catch (error) {
         return res.status(404).json({ success: false, message: 'Insufficient quantity available in inventory' });

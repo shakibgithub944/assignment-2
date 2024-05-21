@@ -10,7 +10,7 @@ const createOrder = async (order: IOrder) => {
         // Fetch the product
         const product = await Product.findById(order.productId);
         if (!product) {
-            throw new Error('Product not found');
+            return product
         }
         // Check available quantity
         if (order.quantity > product.inventory.quantity) {
