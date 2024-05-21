@@ -9,9 +9,9 @@ const createOrder = async (req: Request, res: Response) => {
         const orderData = await orderService.createOrder(order);
         return res.status(201).json(orderData);
     } catch (error) {
-        throw new Error(error as string);
+        return res.status(404).json({ success: false, message: 'Insufficient quantity available in inventory' });
     }
-}
+};
 
 // Get all orders
 
