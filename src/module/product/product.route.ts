@@ -13,5 +13,7 @@ router.delete('/products/:productId', productController.deleteProductById);
 // product routes end
 
 router.post('/orders', orderController.createOrder);
+router.get('/orders', orderController.getAllOrders);
+
 
 export default router;
