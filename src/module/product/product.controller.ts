@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import productService from './product.service';
+import { validateProduct } from '../../validation/product.validation';
 
 
 
@@ -8,7 +9,14 @@ const createProduct = async (req: Request, res: Response) => {
     try {
         const productData = req.body;
         // zod validation schema
-        // const validateStudent = studentSchema.parse(student);
+        const validateProductData = validateProduct(productData);
+        if (!validateProductData.success) {
+            return res.status(400).json({
+                success: false,
+                message: "Validation failed",
+                errors: validateProductData.errors
+            });
+        }
         const result = await productService.createProduct(productData);
         res.status(201).json({ success: true, message: 'Product created successfully', data: result });
     } catch (error) {
