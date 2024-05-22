@@ -24,38 +24,42 @@ cd yourrepository
 
 Install the project dependencies using npm:
 
-npm install
+### npm install
 
 Environment Variables Example:
 Create a .env file in the root of the project and add the following content:
 
 PORT=5000
 
-# For MongoDB Atlas cluster
+## For MongoDB Atlas cluster
 
 DATABASE_URL=MONGODB_URL
 
 Running the Project
 To start the server in development mode, use the following command:
 
-npm run start:dev
+### npm run start:dev
+
 This will start the server with nodemon and ts-node-dev for automatic restarts and TypeScript compilation.
 
 Building the Project
 To compile the TypeScript code to JavaScript, use:
 
-npm run build
+### npm run build
 
 Linting and Formatting
 To check for linting errors using ESLint, run:
-npm run lint
+
+### npm run lint
 
 To automatically fix linting errors, run:
 
-npm run lint:fix
+### npm run lint:fix
 
 To format the code using Prettier, run:
-npm run prettier
+
+### npm run prettier
 
 To automatically fix formatting issues, run:
-npm run prettier:fix
+
+### npm run prettier:fix
