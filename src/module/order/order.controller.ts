@@ -40,7 +40,7 @@ const getAllOrders = async (req: Request, res: Response) => {
             return res.status(200).json({ success: true, message: "Orders fetched successfully!", data: result });
         } else {
             const result = await orderService.getAllOrders();
-            if (!result) {
+            if (result.length === 0) {
                 return res.status(404).json({ success: false, message: 'No orders found', data: null });
             }
             return res.status(200).json({ success: true, message: "Orders fetched successfully!", data: result });
